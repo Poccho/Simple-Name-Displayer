@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'User Details App',
       theme: ThemeData(
-        primaryColor: Colors.purpleAccent,
+        primaryColor: Colors.white,
         appBarTheme: AppBarTheme(
           color: Colors.purpleAccent,
         ),
@@ -99,12 +99,20 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
             ),
             SizedBox(height: 20),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.purple,
+
+              ),
               onPressed: (){
                 FlutterToastr.show("Hello ${firstNameController.text} ${middleNameController.text} ${lastNameController.text} !",
                     context, duration: FlutterToastr.lengthLong, position:  FlutterToastr.top, backgroundColor: Colors.purpleAccent);
 
               },
-              child: Text('Show Details'),
+              child: Text('Show Details',
+                style: TextStyle(fontWeight: FontWeight.bold,
+                color: Colors.white
+                ),
+              ),
             ),
           ],
         ),
